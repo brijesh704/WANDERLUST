@@ -107,7 +107,6 @@ app.all("*", (req, res, next) => {
 app.use((err, req, res, next) => {
   let { statusCode = 400, message = "something went wrong!" } = err;
   res.status(statusCode).send(message);
-  console.log(err);
   return res.status(statusCode).render("listings/error.ejs", { err });
 });
 
